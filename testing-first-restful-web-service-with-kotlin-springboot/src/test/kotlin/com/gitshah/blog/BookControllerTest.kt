@@ -17,11 +17,12 @@ class BookControllerTest {
     lateinit var testRestTemplate: TestRestTemplate
 
     @Test
-    fun shouldFindRanks() {
+    fun shouldSearchBooks() {
         val result = testRestTemplate.getForEntity("/books/search?title=Steve",
                 String::class.java)
         Assert.assertNotNull(result)
         Assert.assertEquals(HttpStatus.OK, result.statusCode)
+        println(result.body)
         val books = result.body.fromJson<Array<Book>>()
         Assert.assertEquals(2, books.size)
         Assert.assertNotNull(books.find { it.title == "Steve Jobs" })
