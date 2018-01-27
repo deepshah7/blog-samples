@@ -1,2 +1,2 @@
-# blog-samples
-A repository that holds all the sample code that I create for gitshah.com
+# Samples
+A simple repository to hold all samples that I develop for publishing on gitshah.com blog.
